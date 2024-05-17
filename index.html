@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="script.js">
+  
+  <!-- Open graph tags-->
+  <meta property="og:title" content="Gamer Grid">
+  <meta property="og:description" content="Gamer Grid is your go-to hub for rating, ranking, and reviewing games!"/> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:image" content="images\media-masterlist.png"> 
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Gamer Grid</title>
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+  <!-- JavaScript link -->
+  <script src="script.js"></script>
+  <!--This is the header at the top of the screen-->
+  <header>
+    
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" href="index.html" onclick="window.location.reload()">
+    </div>
+    <span class="subtitle">Your go-to hub to rate, rank, and review video games</span>
+      <nav>
+          <ul>
+              <li id="about"><a class="light-link" href="about.html">About</a></li>
+              <!-- <li id="faqs"><a class="light-link" href="faq.html">FAQs</a></li> -->
+          </ul>
+      </nav>
+  </div>
+  </header>
+
+<main>
+  <div class="tbl-container table-container bdr">
+    <table id="media-table" class="table table-hover table-dark">
+      <!-- This is the table head, which contains editable headers -->
+      <thead>
+        <tr class="thead">
+          <th scope="col" contenteditable>Title</th>
+          <th scope="col" contenteditable>Score</th>
+          <th scope="col" contenteditable>Platform</th>
+          <th scope="col" contenteditable>Genre</th>
+          <th scope="col" contenteditable>Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <!-- This is the table body -->
+      <!-- Each <tr> is a row, and each <td> is an individual cell  -->
+      <tbody id="media-table-body">
+        <tr>
+          <td contenteditable scope="row"><td>
+          <div class="dropdown">
+            <button name="score"  class="btn btn-secondary dropdown-toggle score-dropdown-class" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Score</button>
+            <div name="score" id="score-dropdown" class="dropdown-menu score-menu-dropdown-class" aria-labelledby="dropdownMenuButton1">
+                <button class="dropdown-item" id="score1" value="1">⭐</button>
+                <button class="dropdown-item" id="score2" value="2">⭐⭐</button>
+                <button class="dropdown-item" id="score3" value="3">⭐⭐⭐</button>
+                <button class="dropdown-item" id="score4" value="4">⭐⭐⭐⭐</button>
+                <button class="dropdown-item" id="score5" value="5">⭐⭐⭐⭐⭐</button>
+            </div>
+          </div>
+          <td contenteditable></td>
+          <td contenteditable></td>
+          <td contenteditable></td>
+          <td><button class="delete fa fa-trash-o" type="button"><i id="trash"></i></button></td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- The lines below are table buttons for various functions -->
+<span class="center-span buttons">
+  <button id="add-row" class="btn btn-secondary" type="button" cursor="pointer">Add Row</button>
+  <!-- The delete button has been removed since it serves the same function as the trash button -->
+  <!-- <button id="delete" class="btn btn-secondary">Delete Row</button> -->
+  <button id="save" class="btn btn-secondary" type="button" cursor="pointer">Save Table</button>
+  <button id="clear" class="btn btn-secondary" type="button" cursor="pointer">Clear Table</button>
+  <button id="export" class="btn btn-secondary" type="button" cursor="pointer">Export</button>
+  <!-- <button id="local" class="btn btn-secondary">Clear Local Storage</button> -->
+  </span>
+  </div>
+  <!-- The lines above mark the end of the table and table container div -->
+  
+
+</main>
+<footer>
+  <div>
+      <p>&copy; 2024 Gamer Grid. All rights reserved.
+      <br>This project was created by <a class="light-link" href="https://github.com/danielledonnelly">Danielle Donnelly.</a></p>
+  </div>
+</footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+</body>
+</html>

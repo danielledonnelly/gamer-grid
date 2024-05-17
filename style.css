@@ -1,0 +1,412 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  color-scheme: dark;
+  --header:  #000000 !important;
+  --body: #000000 !important;
+  --table: #000000 !important;
+  --footer: #000000 !important;
+  --faqs: #000000 !important;
+  --border: #505050 !important;
+  --hover: #ccc !important;
+}
+
+.logo img {
+  width: 300px; /* Adjust the size as needed */
+  height: 90px; /* Maintains the aspect ratio */
+}
+
+main {
+  margin-top: 70px;
+  background-color: var(--body);
+  width: 100% !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--body) !important; 
+  color: #fff!important;
+  margin: 0; 
+  padding: 0; 
+  width: 100% !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  float: left;
+} 
+
+table {
+  background-color: var(--table) !important;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto !important;
+}
+
+tr {
+  border-top: 1px solid var(--border) !important; 
+  border-bottom: 1px solid var(--border) !important; 
+}
+    
+p {
+  font-size: medium;
+}
+
+header {
+  background-color: var(--header) !important;
+  padding: 20px 0 !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--border);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: white;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: auto;
+}
+
+/* Table Styles */
+
+td {
+  font-size: 14px !important;
+  padding-left: 20px !important;
+}
+
+thead th {
+  padding-left: 20px !important;
+}
+
+.dropdown-menu{
+  background-color: var(--body) !important;
+  align-items: center !important;
+  overflow-x: visible !important;
+  background-color: #30363C !important;
+}
+
+.dropdown-item{
+  align-items: center !important;
+  overflow-x: visible !important;
+}
+
+.transparent { 
+  background-color: transparent !important;
+  border-color: transparent !important;
+  text-align: center;
+}
+
+/* Button Styles */
+
+.logo {
+
+  color: white;
+  font-size: 20px; 
+  cursor: pointer; 
+}
+
+.logo a{
+  color: white;
+}
+
+.logo:hover a {
+  color: var(--hover);
+}
+
+button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around !important;
+  width: 100% !important;
+  margin-bottom: 75px;
+}
+ 
+.buttons button {
+  margin: 0 5px; 
+  align-self: center;
+} 
+
+.btn-secondary {
+  background-color: #30363C !important;
+  border-color: #565656 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #434A50 !important;
+}
+
+.dropdown-item:hover {
+  background-color: #434A50 !important;
+}
+
+.delete {
+  font-size: 20px !important;
+  color: white !important;
+  position: relative !important;
+  top: 50% !important;
+  transform: translateY(25%) !important;
+}
+
+/* Navigation Styles */
+
+nav ul {
+  font-size: 16px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  float: right !important;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+li{
+  cursor: pointer;
+}
+
+li:hover {
+  color: var(--hover) !important; 
+  }
+
+.static{
+  cursor: default;
+}
+
+.static:hover {
+  color: white;
+  }
+
+#faqs:hover {
+    color: var(--hover) !important;
+  }
+
+/* Footer Styles */
+
+footer {
+  width: 100% !important;
+  height: 60px; 
+  background-color: var(--footer);
+  text-align: center !important;
+  box-sizing: border-box !important;
+  z-index: 999;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  border-top: 1px solid var(--border)
+}
+
+footer p {
+  font-size: 14px;
+  color: white; 
+  padding: 10px;
+  margin: auto;
+}
+
+.center-span.buttons {
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 999; 
+  height: 60px;
+} 
+
+.center-span.buttons button {
+  margin: 5px; 
+}
+
+/* Miscellaneous */
+
+.static {
+  cursor: default;
+}
+
+.static:hover {
+  color: white;
+}
+
+.light-link {
+  color:lightblue !important;
+}
+
+.light-link:hover{
+    color: #ccc;
+}
+
+.question {
+  background-color: #33383e;
+  display: block;
+  padding: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 180px;
+  margin-right: 180px;
+  border: solid 5px;
+  border-color: var(--border) !important;
+}
+
+h3 {
+  font-size: 16px !important;
+}
+
+li {
+  list-style-type: none;
+}
+
+#faq-section{
+  margin-top: 20px !important;
+  margin-bottom: 60px !important;
+}
+
+a:hover,
+.delete:hover,
+#about:hover,
+#about:hover a,
+#faqs:hover,
+#faqs:hover a {
+  color: var(--hover) !important;
+  text-decoration: none !important;
+}
+
+.logo{
+  color: green;
+  
+}
+
+.dropdown-menu {
+  max-width: 55px !important;
+  border: 10px white !important;
+}
+
+/* Mobile Styles */
+
+@media only screen and (max-width: 600px) {
+
+  td {
+    font-size: 11px !important
+  }
+
+  header{
+    max-height: 60px; 
+  }
+  
+  table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  }
+
+  main{
+  margin-top: 60px;
+  }
+
+  thead {
+    font-size: 12px;
+  }
+
+  .buttons {
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  } 
+
+  .subtitle {
+    display: none;
+  }
+
+  .buttons .btn {
+    font-size: 10px;
+    height: 40px;
+  }
+  
+  .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dropdown-toggle{
+    font-size: 10px !important;
+    overflow-x: visible !important;
+  }
+
+  .dropdown-menu{
+    font-size: 10px !important;
+    overflow-x: visible !important;
+  }
+  
+  .dropdown-item{
+    font-size: 10px !important;
+    overflow-x: visible !important;
+  }
+
+  footer {
+    max-height: 60px; 
+  }
+ 
+  footer p {
+    font-size: 11px;
+  }
+
+  .question{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  
+  td {
+    font-size: 14px !important
+  }
+  
+  .subtitle {
+    display: none;
+  }
+
+  main {
+    margin-bottom: 0px !important;
+  }
+
+  .question{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .dropdown-item{
+    font-size: 12 !important;
+  }
+}
