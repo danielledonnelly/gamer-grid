@@ -38,6 +38,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   float: left;
+  padding-top: 60px
 } 
 
 table {
@@ -45,7 +46,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto !important;
+  padding-top: 60px;
 }
+
+
 
 tr {
   border-top: 1px solid var(--border) !important; 
@@ -216,7 +220,6 @@ li:hover {
 
 footer {
   width: 100% !important;
-  height: 60px; 
   background-color: var(--footer);
   text-align: center !important;
   box-sizing: border-box !important;
@@ -224,7 +227,7 @@ footer {
   display: flex;
   left: 0;
   bottom: 0;
-  position: fixed;
+  position: relative;
   border-top: 1px solid var(--border)
 }
 

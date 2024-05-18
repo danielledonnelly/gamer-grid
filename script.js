@@ -333,3 +333,36 @@ function exportTableToCSV() {
   document.body.appendChild(link); // Required for Firefox
   link.click();
 }
+
+
+const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
+const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
+const gameCoversContainer = document.getElementById('game-covers');
+
+async function fetchGameCovers() {
+  const response = await fetch('https://api.igdb.com/v4/covers', {
+    method: 'POST',
+    headers: {
+      'Client-ID': clientId,
+      'Authorization': `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: 'fields url, game; where game != null; limit 10;',
+    })
+  });
+  
+  const covers = await response.json();
+  displayGameCovers(covers);
+}
+
+function displayGameCovers(covers) {
+  covers.forEach(cover => {
+    const img = document.createElement('img');
+    img.src = `https:${cover.url}`;
+    img.classList.add('cover');
+    gameCoversContainer.appendChild(img);
+  });
+}
+
+fetchGameCovers();
