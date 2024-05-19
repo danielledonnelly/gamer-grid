@@ -288,14 +288,10 @@ function deleteRow() {
 
 
 function deleteSpecificRow(event) {
-  console.log('event.target', event.target);
-  console.log('event.target.parentElement', event.target.parentElement);
-  console.log('event.target.parentElement.parentElement', event.target.parentElement.parentElement);
-  let row = event.target.parentElement.parentElement;
-  // Remove the row from its parent
-  row.remove();
-  // This was commented out to accommodate the manual save button
-  // saveTableData()
+  let row = event.target.closest('tr'); // Find the closest parent row
+  if (row) {
+    row.remove();
+  }
 }
 
 
