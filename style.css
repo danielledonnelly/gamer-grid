@@ -264,16 +264,12 @@ footer p {
   cursor: default;
 }
 
-.static:hover {
-  color: #FFFFFF;
-}
-
 .light-link {
   color:#9E7FEB !important;
 }
 
 .light-link:hover{
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 
 .question {
@@ -283,12 +279,21 @@ footer p {
   padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 280px;
+  margin-right: 280px;
   border: solid 5px;
   border-color: var(--border) !important;
   border-radius: 5px;
 }
+
+#about-section {
+  margin-bottom: 30px;
+}
+
+.about, .answer {
+  font-size: 18px !important;
+}
+
 
 li {
   list-style-type: none;
