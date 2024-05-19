@@ -58,6 +58,12 @@ tr {
     
 p {
   font-size: medium;
+  color: #F465EE !important;
+}
+
+th,
+td {
+  color: #F465EE !important;  
 }
 
 header {
@@ -146,7 +152,7 @@ button {
   display: flex;
   justify-content: space-around !important;
   width: 100% !important;
-  margin-bottom: 75px;
+  margin-bottom: 15px;
 }
  
 .buttons button {
@@ -234,7 +240,6 @@ footer {
 
 footer p {
   font-size: 14px;
-  color: white; 
   padding: 10px;
   margin: auto;
 }
@@ -261,7 +266,7 @@ footer p {
 }
 
 .light-link {
-  color:lightblue !important;
+  color:#9E7FEB !important;
 }
 
 .light-link:hover{
