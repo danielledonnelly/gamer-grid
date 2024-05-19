@@ -133,6 +133,10 @@ thead th {
   color: var(--hover);
 }
 
+.big-button {
+  max-height: 50px;
+}
+
 button {
   background-color: transparent;
   border: transparent;
@@ -164,10 +168,8 @@ button {
 }
 
 .delete {
-  font-size: 20px !important;
-  color: white !important;
-  position: relative !important;
-  height: 20px !important;
+  position: relative;
+  height: 30px;
 }
 
 /* Navigation Styles */
