@@ -11,7 +11,7 @@
   --table: #000000 !important;
   --footer: #000000 !important;
   --faqs: #000000 !important;
-  --border: #505050 !important;
+  --border: #110DA0 !important;
   --hover: #ccc !important;
 }
 
@@ -49,6 +49,9 @@ table {
   padding-top: 60px;
 }
 
+.medium-button {
+  width: 95px !important;
+}
 
 
 tr {
@@ -108,7 +111,7 @@ thead th {
   background-color: var(--body) !important;
   align-items: center !important;
   overflow-x: visible !important;
-  background-color: #30363C !important;
+  background-color:  #5d36be !important;
 }
 
 .dropdown-item{
@@ -125,7 +128,6 @@ thead th {
 /* Button Styles */
 
 .logo {
-
   color: white;
   font-size: 20px; 
   cursor: pointer; 
@@ -161,16 +163,16 @@ button {
 } 
 
 .btn-secondary {
-  background-color: #30363C !important;
-  border-color: #565656 !important;
+  background-color: #000000 !important;
+  border-color: #F465EE !important;
 }
 
 .btn-secondary:hover {
-  background-color: #434A50 !important;
+  border-color: #F465EE !important;
 }
 
 .dropdown-item:hover {
-  background-color: #434A50 !important;
+  background-color: #F465EE !important;
 }
 
 .delete {
@@ -270,11 +272,11 @@ footer p {
 }
 
 .light-link:hover{
-    color: #ccc;
+    color: #FFFFFF;
 }
 
 .question {
-  background-color: #33383e;
+  background-color: #000000;
   display: block;
   padding: 10px;
   padding-top: 20px;
@@ -309,10 +311,6 @@ a:hover,
   text-decoration: none !important;
 }
 
-.logo{
-  color: green;
-  
-}
 
 .dropdown-menu {
   max-width: 55px !important;
