@@ -1,4 +1,4 @@
-Gamer Grid is the eccentric sister-project of [Media Masterlist]([url](https://danielledonnelly.github.io/media-masterlist-project/)).
+Gamer Grid is the eccentric sister-project of [Media Masterlist]([(https://danielledonnelly.github.io/media-masterlist-project/)]).
 
 My goal is to use an API to pull game covers while going in a maximalist styling direcion.
 
