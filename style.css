@@ -11,7 +11,7 @@
   --table: #000000 !important;
   --footer: #000000 !important;
   --faqs: #000000 !important;
-  --border: #110DA0 !important;
+  --border: #9E7FEB !important;
   --hover: #ccc !important;
 }
 
@@ -66,6 +66,12 @@ p {
 
 th,
 td {
+  color: #F465EE !important;  
+  border-color: #9E7FEB !important;
+}
+
+h3 {
+  font-size: 20px !important;
   color: #F465EE !important;  
 }
 
@@ -286,10 +292,6 @@ footer p {
   margin-right: 180px;
   border: solid 5px;
   border-color: var(--border) !important;
-}
-
-h3 {
-  font-size: 16px !important;
 }
 
 li {
