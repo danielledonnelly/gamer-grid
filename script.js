@@ -171,7 +171,7 @@ function addRow() {
 
   // Create the score button
   let button = document.createElement("button");
-  button.innerText = "👾";
+  button.innerText = "💭";
   button.setAttribute("class", "btn btn-secondary dropdown-toggle");
   button.setAttribute("type", "button");
   button.setAttribute("id", "dropdownMenuButton1");
@@ -213,10 +213,19 @@ function addRow() {
 
   // Create delete button with trash icon
   let deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete", "fa", "fa-trash-o");
+  deleteButton.classList.add("delete");
 
-  // Append delete button to delete cell
-  deleteCell.appendChild(deleteButton);
+  // Create and set properties for the trash icon image
+  let deleteImg = document.createElement("img");
+  deleteImg.src = "images/trash.png";
+  deleteImg.alt = "Delete";
+  deleteImg.classList.add("delete");
+
+// Append trash icon image to delete button
+deleteButton.appendChild(deleteImg);
+
+// Append delete button to delete cell
+deleteCell.appendChild(deleteButton);
 
   // Append cells to row
   row.appendChild(c1);
