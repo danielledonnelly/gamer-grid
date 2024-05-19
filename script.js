@@ -171,7 +171,7 @@ function addRow() {
 
   // Create the score button
   let button = document.createElement("button");
-  button.innerText = "Score";
+  button.innerText = "👾";
   button.setAttribute("class", "btn btn-secondary dropdown-toggle");
   button.setAttribute("type", "button");
   button.setAttribute("id", "dropdownMenuButton1");
