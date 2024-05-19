@@ -323,7 +323,7 @@ a:hover,
   }
 
   header{
-    max-height: 60px; 
+    max-height: 120px !important; 
   }
   
   table {
