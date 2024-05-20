@@ -170,9 +170,11 @@ button {
 .btn-secondary {
   background-color: #000000 !important;
   border-color: #F465EE !important;
+  border: none !important;
 }
 
 .btn-secondary:hover {
+  background-color: #5d36be !important;
   border-color: #F465EE !important;
 }
 
@@ -318,10 +320,6 @@ a:hover,
 .dropdown-menu {
   max-width: 55px !important;
   border: 10px #FFFFFF !important;
-}
-
-t:hover {
-  color: blue !important;
 }
 
 /* Mobile Styles */
