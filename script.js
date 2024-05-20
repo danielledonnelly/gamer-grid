@@ -359,9 +359,7 @@ async function fetchGameCover(gameTitle, coverCell) {
           'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-          query: `fields id, name, cover.url; where name ~ "${gameTitle}";`
-      })
+      body: `fields id, name, cover.url; where name ~ "${gameTitle}";`
   });
 
   if (!response.ok) {
