@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // This contains code that should be taken care of right away
       window.onload = initialize;
       function initialize (){
+        console.log('Initializing...');
           // Functions that are called immediately (get elements) go in initialize
           
           // This represents the amount of rows we want JavaScript to add in immediately
@@ -349,26 +350,38 @@ const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 
 async function fetchGameCover(gameTitle, coverCell) {
+  console.log(`Fetching cover for game: ${gameTitle}`);
+  
   const response = await fetch('https://api.igdb.com/v4/games', {
-    method: 'POST',
-    headers: {
-      'Client-ID': clientId,
-      'Authorization': `Bearer ${accessToken}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `fields id, name, cover.url; where name ~ "${gameTitle}";`
-    })
+      method: 'POST',
+      headers: {
+          'Client-ID': clientId,
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          query: `fields id, name, cover.url; where name ~ "${gameTitle}";`
+      })
   });
 
+  if (!response.ok) {
+      console.error(`API request failed: ${response.status} ${response.statusText}`);
+      return;
+  }
+
   const games = await response.json();
+  console.log('API response:', games);
+
   if (games.length > 0 && games[0].cover) {
-    const coverUrl = games[0].cover.url.replace('t_thumb', 't_cover_big');
-    displayGameCover(coverUrl, coverCell);
+      const coverUrl = games[0].cover.url.replace('t_thumb', 't_cover_big');
+      console.log('Cover URL:', coverUrl);
+      displayGameCover(coverUrl, coverCell);
   } else {
-    console.log("No cover found for:", gameTitle);
+      console.log("No cover found for:", gameTitle);
+      coverCell.innerHTML = "No cover found"; // Inform the user no cover was found
   }
 }
+
 
 function displayGameCover(coverUrl, coverCell) {
   coverCell.innerHTML = ''; // Clear previous cover if any
@@ -376,4 +389,5 @@ function displayGameCover(coverUrl, coverCell) {
   img.src = `https:${coverUrl}`;
   img.classList.add('cover');
   coverCell.appendChild(img);
+  console.log('Cover displayed:', img.src);
 }
