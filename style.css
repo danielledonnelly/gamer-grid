@@ -59,8 +59,8 @@ table {
 
 
 tr {
-  border-top: 1px solid var(--border) !important; 
-  border-bottom: 1px solid var(--border) !important; 
+  border-top: 2px solid var(--border) !important; 
+  border-bottom: 2px solid var(--border) !important; 
 }
     
 p {
@@ -89,7 +89,7 @@ header {
   left: 0;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
 }
 
 .subtitle {

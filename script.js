@@ -165,6 +165,11 @@ function addRow() {
   c4.setAttribute("contenteditable", "true");
   c5.setAttribute("contenteditable", "true");
 
+  // Add event listener to fetch game cover when content in the first cell changes
+  c1.addEventListener('input', function() {
+      fetchGameCover(c1.innerText.trim(), c2);
+  });
+
   // Create a new dropdown menu for the score
   let dropdown = document.createElement("div");
   dropdown.setAttribute("class", "dropdown");
@@ -248,7 +253,7 @@ function clearTable() {
   // Iterate through each button
   buttons.forEach(button => {
       // Set the inner text of each button to "Score"
-      button.innerText = "Score";
+      button.innerText = "💭";
   });
 
   // Get the table body element
@@ -342,10 +347,9 @@ function exportTableToCSV() {
 
 const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
-const gameCoversContainer = document.getElementById('game-covers');
 
-async function fetchGameCovers() {
-  const response = await fetch('https://api.igdb.com/v4/covers', {
+async function fetchGameCover(gameTitle, coverCell) {
+  const response = await fetch('https://api.igdb.com/v4/games', {
     method: 'POST',
     headers: {
       'Client-ID': clientId,
@@ -353,21 +357,23 @@ async function fetchGameCovers() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      query: 'fields url, game; where game != null; limit 10;',
+      query: `fields id, name, cover.url; where name ~ "${gameTitle}";`
     })
   });
-  
-  const covers = await response.json();
-  displayGameCovers(covers);
+
+  const games = await response.json();
+  if (games.length > 0 && games[0].cover) {
+    const coverUrl = games[0].cover.url.replace('t_thumb', 't_cover_big');
+    displayGameCover(coverUrl, coverCell);
+  } else {
+    console.log("No cover found for:", gameTitle);
+  }
 }
 
-function displayGameCovers(covers) {
-  covers.forEach(cover => {
-    const img = document.createElement('img');
-    img.src = `https:${cover.url}`;
-    img.classList.add('cover');
-    gameCoversContainer.appendChild(img);
-  });
+function displayGameCover(coverUrl, coverCell) {
+  coverCell.innerHTML = ''; // Clear previous cover if any
+  const img = document.createElement('img');
+  img.src = `https:${coverUrl}`;
+  img.classList.add('cover');
+  coverCell.appendChild(img);
 }
-
-fetchGameCovers();
