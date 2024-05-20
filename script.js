@@ -166,9 +166,9 @@ function addRow() {
   c4.setAttribute("contenteditable", "true");
   c5.setAttribute("contenteditable", "true");
 
-  // Add event listener to fetch game cover when content in the first cell changes
-  c1.addEventListener('input', function() {
-      fetchGameCover(c1.innerText.trim(), c2);
+    // Add event listener to fetch game cover when content in the first cell changes
+    c1.addEventListener('input', function() {
+      fetchGameCover(c1.innerText.trim(), c1); // Pass c1 for both title and cover
   });
 
   // Create a new dropdown menu for the score
