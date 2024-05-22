@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // This function may not seem important, but buttons such as the Add Row button break when it is removed
   // Please do not delete this function
   // Function to save row count
-  function saveRowCount(count) {
+  function saveGridCount(count) {
       localStorage.setItem('gridCount', count);
   }
 
@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Get the Add Row button
   let addRowButton = document.getElementById("add-row");
-  let rowCount = document.getElementById('media-table-body').getElementsByTagName('tr').length;
-  saveRowCount(gridCount);
+  let gridCount = document.getElementById('media-table-body').getElementsByTagName('tr').length;
+  saveGridCount(gridCount);
 
   // Add event listener to the Add Row button
   addRowButton.addEventListener('click', manualAddRow);
