@@ -68,7 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (tableContent) {
           // Set the innerHTML of media-table-body to the loaded table content
           document.getElementById('media-table-body').innerHTML = tableContent;
-      }
+          const allTableRows = document.querySelectorAll('tr')
+
+
+          allTableRows[i].children[0]
+        }
   }
 
   // IMPORTANT NOTE
