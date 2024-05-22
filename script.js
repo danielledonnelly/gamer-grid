@@ -3,8 +3,8 @@
 function saveTableData() {
   console.log("Saving table data");
   const tableContent = document.getElementById('media-table-body').innerHTML;
-  localStorage.setItem('mediaMasterlist', tableContent);
-  console.log("Data saved to localStorage:", localStorage.getItem('mediaMasterlist'));
+  localStorage.setItem('gamerGrid', tableContent);
+  console.log("Data saved to localStorage:", localStorage.getItem('gamerGrid'));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to load table data from local storage
   function loadTableData() {
       console.log("Loading table data");
-      const tableContent = localStorage.getItem('mediaMasterlist');
+      const tableContent = localStorage.getItem('gamerGrid');
       if (tableContent) {
           // Set the innerHTML of media-table-body to the loaded table content
           document.getElementById('media-table-body').innerHTML = tableContent;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Please do not delete this function
   // Function to save row count
   function saveRowCount(count) {
-      localStorage.setItem('rowCount', count);
+      localStorage.setItem('gridCount', count);
   }
 
   // Call loadTableData when the page loads
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get the Add Row button
   let addRowButton = document.getElementById("add-row");
   let rowCount = document.getElementById('media-table-body').getElementsByTagName('tr').length;
-  saveRowCount(rowCount);
+  saveRowCount(gridCount);
 
   // Add event listener to the Add Row button
   addRowButton.addEventListener('click', manualAddRow);
