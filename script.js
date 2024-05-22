@@ -167,7 +167,8 @@ function addRow() {
   c5.setAttribute("contenteditable", "true");
 
   c1.addEventListener('input', function() {
-    if (c1.innerText.trim()) {
+    // Added to rate limit API and avoid too many fetches
+    if (c1.innerText.trim().length > 9) {
         fetchGameCover(c1.innerText.trim(), c1);
     }
 });
@@ -352,15 +353,19 @@ const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 
 async function fetchGameCover(gameTitle, coverCell) {
   console.log(`Fetching cover for game: ${gameTitle}`);
+
+  const gamesUrl = "https://api.igdb.com/v4/games"
+  const corsUrl = "https://cors-anywhere.herokuapp.com/"
+  const gamesUrlWithCors = `${corsUrl}${gamesUrl}`
   
-  const response = await fetch('https://api.igdb.com/v4/games', {
+  const response = await fetch(gamesUrlWithCors, {
       method: 'POST',
       headers: {
           'Client-ID': clientId,
           'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
       },
-      body: `fields id, name, cover.url; where name ~ "${gameTitle}";`
+      body: `fields id, name, cover.url; search "${gameTitle}";`
   });
 
   if (!response.ok) {
