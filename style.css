@@ -396,6 +396,10 @@ a:hover,
     margin-right: 5px;
     font-size: 10px;
   }
+
+  .about, .answer {
+    font-size: 18px !important;
+  }
 }
 
 /* Tablet Styles */
