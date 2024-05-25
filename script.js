@@ -364,14 +364,15 @@ const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 async function fetchGameCover(gameTitle, coverCell) {
   console.log(`Fetching cover for game: ${gameTitle}`);
 
-  const gamesUrl = "https://api.igdb.com/v4/games"
-  const corsUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/games"
+  const gamesUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/games";
+  
+  // Old 
+  //const gamesUrl = "https://api.igdb.com/v4/games"
 
-  // Temporary cors anywhere solution; this url was previously the value for the corsURL constant.
-  // https://cors-anywhere.herokuapp.com/
+  // Old 
+  //const corsUrl = "https://cors-anywhere.herokuapp.com/"
 
-  // NEW URL from AWS
-  // https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production
+
   
   const gamesUrlWithCors = `${corsUrl}${gamesUrl}`
   
@@ -380,7 +381,8 @@ async function fetchGameCover(gameTitle, coverCell) {
       headers: {
           'Client-ID': clientId,
           'Authorization': `Bearer ${accessToken}`,
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'x-api-key': r2HfUxxTtx17jyqGFQkvr4nTpwunmy602Op28jBl
       },
       body: `fields id, name, cover.url; search "${gameTitle}";`
   });
