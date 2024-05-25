@@ -356,8 +356,6 @@ function exportTableToCSV() {
   document.body.appendChild(link); // Required for Firefox
   link.click();
 }
-
-
 const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 const apiKey = 'r2HfUxxTtx17jyqGFQkvr4nTpwunmy602Op28jBl';
@@ -373,7 +371,7 @@ async function fetchGameCover(gameTitle, coverCell) {
           'Client-ID': clientId,
           'Authorization': `Bearer ${accessToken}`,
           'Accept': 'application/json',
-          'x-api-key': apiKey
+          'x-api-key': apiKey // Corrected to use apiKey variable
       },
       body: `fields id, name, cover.url; search "${gameTitle}";`
   });
