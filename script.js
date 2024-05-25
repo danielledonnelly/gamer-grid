@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
 
           // Add event listener to save table data whenever a cell's content changes
-          // This was commented out to accommodate the manual save button
+          // This was commented out to accommodate the manual save button, but the comment remains in case auto saving is ever implemented
           // document.getElementById('media-table-body').addEventListener('input', saveTableData);
 
           // Get the Score buttons
@@ -33,9 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // Load the table data
           loadTableData();
-
-          // Ensure event listeners are added after loadTableData is called
-          addEventListeners();
 
           // Below is my solution to a former issue of local storage not being compatible with dropdowns
           // Get all elements with the class "dropdown-item"
@@ -118,12 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
   clearButton.addEventListener('click', clearTable);
   // Add event listener to the Clear button (mobile)
   // clearButton.addEventListener('touchstart', clearTable);
-
-  // // Get the Delete button
-  // let deleteButton = document.getElementById("delete");
-
-  // // Add event listener to the Delete button
-  // deleteButton.addEventListener('click', deleteRow);
 
   // Get the Save Table button
   let saveButton = document.getElementById("save");
@@ -374,7 +365,14 @@ async function fetchGameCover(gameTitle, coverCell) {
   console.log(`Fetching cover for game: ${gameTitle}`);
 
   const gamesUrl = "https://api.igdb.com/v4/games"
-  const corsUrl = "https://cors-anywhere.herokuapp.com/"
+  const corsUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/games"
+
+  // Temporary cors anywhere solution; this url was previously the value for the corsURL constant.
+  // https://cors-anywhere.herokuapp.com/
+
+  // NEW URL from AWS
+  // https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production
+  
   const gamesUrlWithCors = `${corsUrl}${gamesUrl}`
   
   const response = await fetch(gamesUrlWithCors, {
