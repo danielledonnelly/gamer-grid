@@ -360,29 +360,20 @@ function exportTableToCSV() {
 
 const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
+const apiKey = 'r2HfUxxTtx17jyqGFQkvr4nTpwunmy602Op28jBl';
 
 async function fetchGameCover(gameTitle, coverCell) {
   console.log(`Fetching cover for game: ${gameTitle}`);
 
   const gamesUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/games";
-  
-  // Old 
-  //const gamesUrl = "https://api.igdb.com/v4/games"
 
-  // Old 
-  //const corsUrl = "https://cors-anywhere.herokuapp.com/"
-
-
-  
-  const gamesUrlWithCors = `${corsUrl}${gamesUrl}`
-  
-  const response = await fetch(gamesUrlWithCors, {
+  const response = await fetch(gamesUrl, {
       method: 'POST',
       headers: {
           'Client-ID': clientId,
           'Authorization': `Bearer ${accessToken}`,
           'Accept': 'application/json',
-          'x-api-key': r2HfUxxTtx17jyqGFQkvr4nTpwunmy602Op28jBl
+          'x-api-key': apiKey
       },
       body: `fields id, name, cover.url; search "${gameTitle}";`
   });
