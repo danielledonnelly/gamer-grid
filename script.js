@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
           // Load the table data
           loadTableData();
 
+          addEventListeners();
+
           // Below is my solution to a former issue of local storage not being compatible with dropdowns
           // Get all elements with the class "dropdown-item"
           const dropdownItems = document.querySelectorAll('.dropdown-item');
@@ -67,8 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for input events on editable cells
     tableBody.addEventListener('input', function(event) {
         if (event.target.getAttribute('contenteditable') === 'true') {
+            console.log('Content changed:', event.target.innerText.trim());
             if (event.target.innerText.trim().length > 9) {
+                console.log('Fetching cover for:', event.target.innerText.trim());
                 fetchGameCover(event.target.innerText.trim(), event.target);
+                console.log('Content length is not greater than 9');
             }
         }
     })};
@@ -371,7 +376,7 @@ async function fetchGameCover(gameTitle, coverCell) {
           'Client-ID': clientId,
           'Authorization': `Bearer ${accessToken}`,
           'Accept': 'application/json',
-          'x-api-key': apiKey // Corrected to use apiKey variable
+          'x-api-key': apiKey 
       },
       body: `fields id, name, cover.url; search "${gameTitle}";`
   });
@@ -390,13 +395,13 @@ async function fetchGameCover(gameTitle, coverCell) {
       displayGameCover(coverUrl, coverCell);
   } else {
       console.log("No cover found for:", gameTitle);
-      coverCell.innerHTML = "No cover found"; // Inform the user no cover was found
+      coverCell.innerHTML = "No cover found"; 
   }
 }
 
 
 function displayGameCover(coverUrl, coverCell) {
-  coverCell.innerHTML = ''; // Clear previous cover if any
+  coverCell.innerHTML = '';
   const img = document.createElement('img');
   img.src = `https:${coverUrl}`;
   img.classList.add('cover');
