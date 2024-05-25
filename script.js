@@ -76,40 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })};
 
-    // THIS IS WHERE ALL EVENT LISTENERS SHOULD BE ADDED
-    function addEventListeners() {
-        const tableBody = document.getElementById('media-table-body');
-    
-        // Add event listeners for c1 cells
-        tableBody.querySelectorAll('td[contenteditable="true"]').forEach(cell => {
-          cell.addEventListener('input', function() {
-            if (this.innerText.trim().length > 9) {
-              fetchGameCover(this.innerText.trim(), this);
-            }
-          });
-        });
-    
-        // Add event listeners for dropdown items
-        tableBody.querySelectorAll('.dropdown-item').forEach(item => {
-          item.addEventListener('click', function() {
-            const button = this.closest('td').querySelector('.dropdown-toggle');
-            if (button) {
-              button.innerText = this.innerText;
-            }
-          });
-        });
-    
-        // Add event listeners for delete buttons
-        tableBody.querySelectorAll('.delete').forEach(button => {
-          button.addEventListener('click', function(event) {
-            const row = this.closest('tr');
-            if (row) {
-              row.remove();
-            }
-          });
-        });
-      }
-
   // Function to load table data from local storage
   function loadTableData() {
       console.log("Loading table data");
