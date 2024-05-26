@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // document.getElementById('media-table-body').addEventListener('input', saveTableData);
 
           // Get the Score buttons
-          const myScoreSelButtons = document.getElementsByClassName("score-dropdown-class"); // there are 11 of these
+        //   const myScoreSelButtons = document.getElementsByClassName("score-dropdown-class"); // there are 11 of these
 
           // Load the table data
           loadTableData();
@@ -361,14 +361,14 @@ function exportTableToCSV() {
   document.body.appendChild(link); // Required for Firefox
   link.click();
 }
-const accessToken = '8u95975qufhpvw0tsxemj4zuzrrzfl';
+const accessToken = '566aca7punenveyp8e8mrh1wyn09x7';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 const apiKey = 'r2HfUxxTtx17jyqGFQkvr4nTpwunmy602Op28jBl';
 
 async function fetchGameCover(gameTitle, coverCell) {
   console.log(`Fetching cover for game: ${gameTitle}`);
 
-  const gamesUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/games";
+  const gamesUrl = "https://z4lzvq8m7i.execute-api.us-west-2.amazonaws.com/production/v4/covers";
 
   const response = await fetch(gamesUrl, {
       method: 'POST',
