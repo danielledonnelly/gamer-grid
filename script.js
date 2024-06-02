@@ -366,7 +366,6 @@ const accessToken = '566aca7punenveyp8e8mrh1wyn09x7';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
 
-
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
@@ -392,8 +391,8 @@ async function fetchGameCover(gameTitle, coverCell) {
         const responseData = await response.json();
         console.log('API response:', responseData);
 
-        if (responseData.length > 0 && responseData[0].cover && responseData[0].cover.url) {
-            const coverUrl = responseData[0].cover.url.replace('t_thumb', 't_cover_big');
+        if (responseData.length > 0 && responseData[0].url) {
+            const coverUrl = responseData[0].url.replace('t_thumb', 't_cover_big');
             console.log('Cover URL:', coverUrl);
             displayGameCover(coverUrl, coverCell);
         } else {
