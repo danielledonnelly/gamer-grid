@@ -369,7 +369,7 @@ const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
-    const gamesUrl = `https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/covers?search=${encodeURIComponent(gameTitle)}&fields=id,name,cover.url`;
+    const gamesUrl = `https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games?search=${encodeURIComponent(gameTitle)}&fields=id,name,cover.url`;
 
     try {
         const response = await fetch(gamesUrl, {
@@ -392,12 +392,11 @@ async function fetchGameCover(gameTitle, coverCell) {
         console.log('API response:', games);
 
         if (games.length > 0 && games[0].cover) {
-            const coverUrl = games[0].cover.url.replace('t_thumb', 't_cover_big');
-            console.log('Cover URL:', coverUrl);
+            const coverUrl = games[0].cover.url;
             displayGameCover(coverUrl, coverCell);
         } else {
             console.log("No cover found for:", gameTitle);
-            coverCell.innerHTML = "No cover found"; 
+            coverCell.innerHTML = "No cover found";
         }
     } catch (error) {
         console.error('Fetch error:', error);
@@ -408,7 +407,7 @@ async function fetchGameCover(gameTitle, coverCell) {
 function displayGameCover(coverUrl, coverCell) {
     coverCell.innerHTML = '';
     const img = document.createElement('img');
-    img.src = `https:${coverUrl}`;
+    img.src = coverUrl.replace('t_thumb', 't_cover_big');
     img.classList.add('cover');
     coverCell.appendChild(img);
     console.log('Cover displayed:', img.src);
