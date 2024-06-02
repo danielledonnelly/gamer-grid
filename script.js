@@ -369,17 +369,17 @@ const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
-    const gamesUrl = `https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/covers?search=${encodeURIComponent(gameTitle)}&fields=cover.url`;
-
+    const gamesUrl = "https://api.igdb.com/v4/games";
+  
     try {
         const response = await fetch(gamesUrl, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Client-ID': clientId,
                 'Authorization': `Bearer ${accessToken}`,
-                'Accept': 'application/json',
-                'x-api-key': apiKey 
-            }
+                'Accept': 'application/json'
+            },
+            body: `fields id, name, cover.url; search "${gameTitle}";`
         });
 
         if (!response.ok) {
@@ -388,11 +388,11 @@ async function fetchGameCover(gameTitle, coverCell) {
             return;
         }
 
-        const responseData = await response.json();
-        console.log('API response:', responseData);
+        const games = await response.json();
+        console.log('API response:', games);
 
-        if (responseData.length > 0 && responseData[0].url) {
-            const coverUrl = responseData[0].url.replace('t_thumb', 't_cover_big');
+        if (games.length > 0 && games[0].cover) {
+            const coverUrl = games[0].cover.url.replace('t_thumb', 't_cover_big');
             console.log('Cover URL:', coverUrl);
             displayGameCover(coverUrl, coverCell);
         } else {
