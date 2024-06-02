@@ -362,6 +362,7 @@ function exportTableToCSV() {
   link.click();
 }
 
+//This works on codeswing but not the live site
 const accessToken = '566aca7punenveyp8e8mrh1wyn09x7';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
