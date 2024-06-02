@@ -414,3 +414,15 @@ function displayGameCover(coverUrl, coverCell) {
     coverCell.appendChild(img);
     console.log('Cover displayed:', img.src);
 }
+
+//I thought this would fix things but it just made stuff worse
+// fetch('https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production', {
+//     method: 'GET',
+//     headers: {
+//         'Client-ID': 'clientID',
+//         'Authorization': 'accessToken'
+//     }
+// })
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch(error => console.error('Fetch error:', error));
