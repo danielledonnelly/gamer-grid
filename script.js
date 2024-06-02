@@ -366,10 +366,11 @@ const accessToken = '566aca7punenveyp8e8mrh1wyn09x7';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
 const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
 
+
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
-    const gamesUrl = `https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games?search=${encodeURIComponent(gameTitle)}&fields=id,name,cover.url`;
+    const gamesUrl = `https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/covers?search=${encodeURIComponent(gameTitle)}&fields=cover.url`;
 
     try {
         const response = await fetch(gamesUrl, {
@@ -388,15 +389,16 @@ async function fetchGameCover(gameTitle, coverCell) {
             return;
         }
 
-        const games = await response.json();
-        console.log('API response:', games);
+        const responseData = await response.json();
+        console.log('API response:', responseData);
 
-        if (games.length > 0 && games[0].cover) {
-            const coverUrl = games[0].cover.url;
+        if (responseData.length > 0 && responseData[0].cover && responseData[0].cover.url) {
+            const coverUrl = responseData[0].cover.url.replace('t_thumb', 't_cover_big');
+            console.log('Cover URL:', coverUrl);
             displayGameCover(coverUrl, coverCell);
         } else {
             console.log("No cover found for:", gameTitle);
-            coverCell.innerHTML = "No cover found";
+            coverCell.innerHTML = "No cover found"; 
         }
     } catch (error) {
         console.error('Fetch error:', error);
@@ -405,9 +407,9 @@ async function fetchGameCover(gameTitle, coverCell) {
 }
 
 function displayGameCover(coverUrl, coverCell) {
-    coverCell.innerHTML = '';
+    coverCell.innerHTML = ''; // Clear previous cover if any
     const img = document.createElement('img');
-    img.src = coverUrl.replace('t_thumb', 't_cover_big');
+    img.src = `https:${coverUrl}`;
     img.classList.add('cover');
     coverCell.appendChild(img);
     console.log('Cover displayed:', img.src);
