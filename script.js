@@ -369,14 +369,14 @@ const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
-    const gamesUrl = "https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games";
+    const gamesUrl = "https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/{proxy+}";
   
     try {
         const response = await fetch(gamesUrl, {
             method: 'POST',
             headers: {
                 'Client-ID': clientId,
-                'Authorization': `Bearer ${accessToken}`,
+                'Authorization': `Bearer = ${accessToken}`,
                 'Accept': 'application/json'
             },
             body: `fields id, name, cover.url; search "${gameTitle}";`
