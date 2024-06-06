@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for input events on editable cells
     tableBody.addEventListener('input', function(event) {
         if (event.target.getAttribute('contenteditable') === 'true') {
-            console.log('Content changed:', event.target.innerText.trim());
             if (event.target.innerText.trim().length > 9) {
                 console.log('Fetching cover for:', event.target.innerText.trim());
                 fetchGameCover(event.target.innerText.trim(), event.target);
@@ -362,22 +361,23 @@ function exportTableToCSV() {
   link.click();
 }
 
-const accessToken = '566aca7punenveyp8e8mrh1wyn09x7';
+const accessToken = '90q372sybn6f3g05qh9u1xt0dvzvmd';
 const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
-const apiKey = 'salpG1bHAc1pztKDr3fyX9wpNwaglsED12g2pbDK';
+const apiKey = 'jr8s00jj5a';
 
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
 
-    const gamesUrl = "https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/{proxy+}";
+    const gamesUrl = "https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games";
   
     try {
         const response = await fetch(gamesUrl, {
             method: 'POST',
             headers: {
                 'Client-ID': clientId,
-                'Authorization': `Bearer = ${accessToken}`,
-                'Accept': 'application/json'
+                'Authorization': `Bearer ${accessToken}`,
+                'Accept': 'application/json',
+                'x-api-key': apiKey,
             },
             body: `fields id, name, cover.url; search "${gameTitle}";`
         });
