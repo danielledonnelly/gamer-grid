@@ -367,8 +367,8 @@ const apiKey = 'jr8s00jj5a';
 
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
+    const gamesUrl = "https://crossorigin.me/https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games";
 
-    const gamesUrl = "https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games";
   
     try {
         const response = await fetch(gamesUrl, {
