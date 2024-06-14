@@ -367,20 +367,10 @@ const apiKey = 'jr8s00jj5a';
 
 async function fetchGameCover(gameTitle, coverCell) {
     console.log(`Fetching cover for game: ${gameTitle}`);
-    const gamesUrl = "https://corsproxy.io/?https://pxaopet5f2.execute-api.us-west-2.amazonaws.com/production/v4/games";
+    const gamesUrl = `https://danielledonnelly-crimsonmastodon.web.val.run/?game=${gameTitle}}`;
 
-  
     try {
-        const response = await fetch(gamesUrl, {
-            method: 'POST',
-            headers: {
-                'Client-ID': clientId,
-                'Authorization': `Bearer ${accessToken}`,
-                'Accept': 'application/json',
-                'x-api-key': apiKey,
-            },
-            body: `fields id, name, cover.url; search "${gameTitle}";`
-        });
+        const response = await fetch(gamesUrl);
 
         if (!response.ok) {
             console.error(`API request failed: ${response.status} ${response.statusText}`);
