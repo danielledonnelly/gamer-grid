@@ -69,13 +69,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for input events on editable cells
     tableBody.addEventListener('input', function(event) {
         if (event.target.getAttribute('contenteditable') === 'true') {
-            if (event.target.innerText.trim().length > 9) {
-                console.log('Fetching cover for:', event.target.innerText.trim());
-                fetchGameCover(event.target.innerText.trim(), event.target);
+            // Check if the cell is in the first column
+            const cell = event.target;
+            const columnIndex = cell.cellIndex;
+            if (columnIndex === 0 && cell.innerText.trim().length > 9) {
+                console.log('Fetching cover for:', cell.innerText.trim());
+                fetchGameCover(cell.innerText.trim(), cell);
                 console.log('Content length is not greater than 9');
             }
         }
-    })};
+    });
+}
 
   // Function to load table data from local storage
   function loadTableData() {
