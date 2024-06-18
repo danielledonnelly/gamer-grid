@@ -20,28 +20,13 @@
   <link rel="icon" href="images/favicon.png">
 </head>
 <body>
-  <!-- JavaScript link -->
-  <script src="script.js"></script>
   <!--This is the header at the top of the screen-->
   <header>
-    
-    <div class="container">
       <div class="logo">
         <a href="index.html">
         <img src="images/logo.png" onclick="window.location.reload()">
         </a>
-    </div>
-
-    <span class="subtitle"></span>
-      <nav>
-        <a href="about.html">
-         <img src="images/about-button.png" id="about-image" class="big-button" alt="About">
-        </a>
-        <a href="faq.html">
-          <img src="images/faqs-button.png" id="faqs-image" class="big-button" alt="About">
-         </a>
-      </nav>
-  </div>
+      </div>
   </header>
 
 <main>
@@ -53,45 +38,104 @@
           <th scope="col">GAME</th>
           <th scope="col">RATING</th>
           <th scope="col">PLATFORM</th>
-          <th scope="col">STATUS</th>
+          <th scope="col">GENRE</th>
           <th scope="col">COMMENTS</th>
-          <th scope="col"></th>
         </tr>
       </thead>
 
       <!-- This is the table body -->
       <!-- Each <tr> is a row, and each <td> is an individual cell  -->
       <tbody id="media-table-body">
-        <!-- I commented this all out to ensure rows are all added the same way, using the add row function in the JavaScript.
+        <!-- ROW 1 -->
          <tr>
-          <td contenteditable scope="row"><td>
-          <div class="dropdown">
-            <button name="score"  class="btn btn-secondary dropdown-toggle score-dropdown-class" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">💭</button>
-            <div name="score" id="score-dropdown" class="dropdown-menu score-menu-dropdown-class" aria-labelledby="dropdownMenuButton1">
-                <button class="dropdown-item" id="score1" value="1">⭐</button>
-                <button class="dropdown-item" id="score2" value="2">⭐⭐</button>
-                <button class="dropdown-item" id="score3" value="3">⭐⭐⭐</button>
-                <button class="dropdown-item" id="score4" value="4">⭐⭐⭐⭐</button>
-                <button class="dropdown-item" id="score5" value="5">⭐⭐⭐⭐⭐</button>
-            </div>
-          </div>
-          <td contenteditable></td>
-          <td contenteditable></td>
-          <td contenteditable></td>
-          <td><button class="delete" type="button">
-            <img src="images/trash.png" class="delete">
-          </button></td>
-        </tr> -->
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co480t.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>PS5</td>
+          <td>Always playing</td>
+          <td>Genshin Impact has it all: fast-paced combat, stylish home-decorating, cooking, fishing, card games, and more.</td>
+        </tr>
+        <!-- ROW 2 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2h3y.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>Nintendo Switch</td>
+          <td>Completed</td>
+          <td>This addictive roguelike offers a uniquely sleek and satisfying gameplay experience.</td>
+        </tr>
+        <!-- ROW 3 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1r8e.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>Xbox 360</td>
+          <td>Completed</td>
+          <td>Despite some questionable writing decisions, Life is Strange is a great coming-of-age story with a supernatural twist.</td>
+        </tr>
+        <!-- ROW 4 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2vpp.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>PS5</td>
+          <td>Completed</td>
+          <td>Despite some questionable writing decisions, Life is Strange is a great coming-of-age story with a supernatural twist.</td>
+        </tr>
+        <!-- ROW 5 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co20sq.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>PC (Itch.io)</td>
+          <td>Completed</td>
+          <td>This silly yet profound sapphic love story balances both heartbreaking and heartwarming storytelling.</td>
+        </tr>
+        <!-- ROW 6 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>PC (Steam)</td>
+          <td>Replaying</td>
+          <td>Stardew Valley is a cozy farming sim with art, music, code, and more ALL crafted by a genius one-man team..</td>
+        </tr>
+        <!-- ROW 7 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co23s0.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>Nintendo DS</td>
+          <td>Currently trying to emulate on my phone</td>
+          <td>A staple for kids growing up in the 2000s, Nintendogs was way ahead of its time.</td>
+        </tr>
+        <!-- ROW 8 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2qsi.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>Nintendo Wii</td>
+          <td>Completed and then repeatedly replayed</td>
+          <td>The MySims series remains one of the cutest and most charming titles from EA.</td>
+        </tr>
+        <!-- ROW 9 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co4aj8.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>PS5</td>
+          <td>Completed and then repeatedly replayed</td>
+          <td>Follow the enchanting story of an aspiring alchemist as she fights monsters and sells magical items at her atelier.</td>
+        </tr>
+        <!-- ROW 10 -->
+        <tr>
+          <td scope="row"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1nrn.webp"><td>
+          ⭐⭐⭐⭐⭐
+          <td>Xbox 360</td>
+          <td>Completed</td>
+          <td>Saints Row 4 is a wonderfully silly and absurd adventure from start to finish.</td>
+        </tr>
         </tbody>
     </table>
     <!-- The lines below are table buttons for various functions -->
-<span class="center-span buttons">
-  <button id="add-row" type="button" cursor="pointer"><img src="images/add.png" class="medium-button"></button>
+<!-- <span class="center-span buttons">
+  <button id="add-row" type="button" cursor="pointer"><img src="images/add.png" class="medium-button"></button> -->
   <!-- The delete button has been removed since it serves the same function as the trash button -->
   <!-- <button id="delete" class="btn btn-secondary">Delete Row</button> -->
-  <button id="save" type="button" cursor="pointer"><img src="images/save.png" class="medium-button"></button>
+  <!-- <button id="save" type="button" cursor="pointer"><img src="images/save.png" class="medium-button"></button>
   <button id="clear"  type="button" cursor="pointer"><img src="images/clear.png" class="medium-button"></button>
-  <button id="export" type="button" cursor="pointer"><img src="images/export.png" class="medium-button"></button>
+  <button id="export" type="button" cursor="pointer"><img src="images/export.png" class="medium-button"></button> -->
   <!-- <button id="local" class="btn btn-secondary">Clear Local Storage</button> -->
   </span>
   </div>
