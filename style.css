@@ -15,10 +15,7 @@
   --hover: #2c0f76 !important;
 }
 
-.logo img {
-  width: 300px; 
-  height: 90px; 
-}
+
 
 main {
   margin-top: 70px;
@@ -113,6 +110,14 @@ td {
   padding-left: 20px !important;
 }
 
+/* NOTE TO SELF: VERTICAL IMAGE SIZING */
+td:first-child img {
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
 thead th {
   padding-left: 20px !important;
 }
@@ -140,6 +145,17 @@ thead th {
 .logo {
   font-size: 20px; 
   cursor: pointer; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Center the container content horizontally */
+  align-items: center;
+  overflow: auto;
 }
 
 .logo:hover a {
