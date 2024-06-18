@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.onload = initialize;
         function initialize() {
             console.log('Initializing...');
-            const desiredRowsCount = 9;
+            const desiredRowsCount = 10;
             if (!saveTableData.triggered) {
                 for (let i = 0; i < desiredRowsCount; i++) {
                     addRow();
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (c1.innerText.trim().length > 4) {
                     fetchGameCover(c1.innerText.trim(), c1);
                 }
-            }, 300);
+            }, 2000);
         });
 
         let dropdown = document.createElement("div");
@@ -179,10 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     cell.innerText = "";
                     let images = cell.querySelectorAll('img');
                     images.forEach(img => img.remove());
+                } else if (cell.querySelector('.dropdown-toggle')) {
+                    let button = cell.querySelector('.dropdown-toggle');
+                    button.innerText = "💭";
                 }
             }
         }
-        localStorage.removeItem('mediaMasterlist');
     }
 
     function deleteRow() {
@@ -225,14 +227,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let encodedUri = encodeURI(csvContent);
         let link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "media_masterlist.csv");
+        let download = link.setAttribute("download", "media_masterlist.csv");
         document.body.appendChild(link);
         link.click();
     }
 
-    const accessToken = '90q372sybn6f3g05qh9u1xt0dvzvmd';
-    const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
-    const apiKey = 'jr8s00jj5a';
+    // Not sure that this is all needed now, I might be better off leaving it out of the code
+    // const accessToken = '90q372sybn6f3g05qh9u1xt0dvzvmd';
+    // const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
+    // const apiKey = 'jr8s00jj5a';
 
     async function fetchGameCover(gameTitle, coverCell) {
         console.log(`Fetching cover for game: ${gameTitle}`);
@@ -281,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (c1.innerText.trim().length > 4) {
                         fetchGameCover(c1.innerText.trim(), c1);
                     }
-                }, 2000);
+                }, 1500);
             });
         }
         const dropdownItems = row.querySelectorAll('.dropdown-item');
