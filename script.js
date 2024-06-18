@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
         c1.addEventListener('input', function() {
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
-                if (c1.innerText.trim().length > 9) {
+                if (c1.innerText.trim().length > 4) {
                     fetchGameCover(c1.innerText.trim(), c1);
                 }
-            }, 2000);
+            }, 300);
         });
 
         let dropdown = document.createElement("div");
@@ -174,8 +174,11 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < tableBody.rows.length; i++) {
             let row = tableBody.rows[i];
             for (let j = 0; j < row.cells.length; j++) {
-                if (!row.cells[j].querySelector('.dropdown-toggle') && !row.cells[j].querySelector('img')) {
-                    row.cells[j].innerText = "";
+                let cell = row.cells[j];
+                if (!cell.querySelector('.dropdown-toggle') && !cell.querySelector('.delete')) {
+                    cell.innerText = "";
+                    let images = cell.querySelectorAll('img');
+                    images.forEach(img => img.remove());
                 }
             }
         }
@@ -275,10 +278,10 @@ document.addEventListener('DOMContentLoaded', function() {
             c1.addEventListener('input', function() {
                 clearTimeout(debounceTimeout);
                 debounceTimeout = setTimeout(() => {
-                    if (c1.innerText.trim().length > 9) {
+                    if (c1.innerText.trim().length > 4) {
                         fetchGameCover(c1.innerText.trim(), c1);
                     }
-                }, 1000);
+                }, 2000);
             });
         }
         const dropdownItems = row.querySelectorAll('.dropdown-item');
