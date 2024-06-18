@@ -57,10 +57,11 @@ table {
   width: 95px !important;
 }
 
-
 tr {
   border-top: 2px solid var(--border) !important; 
-  border-bottom: 2px solid var(--border) !important; 
+  border-bottom: 2px solid var(--border) !important;
+  max-height: 200px; /* Ensure table rows have a maximum height */
+  overflow: hidden; /* Hide overflow content */
 }
     
 p {
@@ -111,6 +112,14 @@ header {
 td {
   font-size: 14px !important;
   padding-left: 20px !important;
+}
+
+/* NOTE TO SELF: VERTICAL IMAGE SIZING */
+td:first-child img {
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 thead th {
@@ -185,6 +194,7 @@ button {
 .delete {
   position: relative;
   height: 30px;
+  width: 30px;
 }
 
 /* Navigation Styles */
