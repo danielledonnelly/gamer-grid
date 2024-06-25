@@ -90,18 +90,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let c2 = document.createElement("td");
         let c3 = document.createElement("td");
         let c4 = document.createElement("td");
-        let c5 = document.createElement("td");
         let deleteCell = document.createElement("td");
 
         c1.innerText = " ";
         c3.innerText = " ";
         c4.innerText = " ";
-        c5.innerText = " ";
 
         c1.setAttribute("contenteditable", "true");
         c3.setAttribute("contenteditable", "true");
         c4.setAttribute("contenteditable", "true");
-        c5.setAttribute("contenteditable", "true");
 
         let debounceTimeout;
         c1.addEventListener('input', function() {
@@ -162,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function() {
         row.appendChild(c2);
         row.appendChild(c3);
         row.appendChild(c4);
-        row.appendChild(c5);
         row.appendChild(deleteCell);
 
         table.appendChild(row);
@@ -208,29 +204,34 @@ document.addEventListener('DOMContentLoaded', function() {
             headers.push(table.rows[0].cells[i].innerText.trim());
         }
         csvContent += headers.join(",") + "\r\n";
-
+    
         for (let i = 1; i < table.rows.length; i++) {
             let rowData = [];
             for (let j = 0; j < table.rows[i].cells.length; j++) {
-                let cellData = table.rows[i].cells[j].innerText.trim().replace(/,/g, "");
-                if (j === 1) {
-                    cellData = cellData ? cellData.split("⭐").length - 1 : "";
+                let cell = table.rows[i].cells[j];
+                let cellData = cell.innerText.trim().replace(/,/g, "");
+                // Check for hidden text (game title)
+                let hiddenText = cell.querySelector('span');
+                if (hiddenText) {
+                    cellData = hiddenText.innerText;  // Use the hidden text if it exists
                 }
-                if (j === 0 && cellData === "Score") {
-                    cellData = "";
+                // Convert visual stars to a numeric value
+                if (cellData.includes('⭐')) {
+                    cellData = (cellData.match(/⭐/g) || []).length;  // Count the stars
                 }
                 rowData.push(cellData);
             }
             csvContent += rowData.join(",") + "\r\n";
         }
-
+    
         let encodedUri = encodeURI(csvContent);
         let link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        let download = link.setAttribute("download", "media_masterlist.csv");
+        link.setAttribute("download", "media_masterlist.csv");
         document.body.appendChild(link);
         link.click();
     }
+    
 
     // Not sure that this is all needed now, I might be better off leaving it out of the code
     // const accessToken = '90q372sybn6f3g05qh9u1xt0dvzvmd';
@@ -266,13 +267,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayGameCover(coverUrl, coverCell) {
-        coverCell.innerHTML = '';
+        const gameTitle = coverCell.innerText.trim();  // Save the current game title before clearing the cell
+        coverCell.innerHTML = '';  // Clear the cell
+    
+        // Create a hidden span to hold the game title text
+        const titleSpan = document.createElement('span');
+        titleSpan.style.display = 'none';  // Hide the span
+        titleSpan.innerText = gameTitle;
+        coverCell.appendChild(titleSpan);
+    
+        // Add the image
         const img = document.createElement('img');
         img.src = `https:${coverUrl}`;
         img.classList.add('cover');
         coverCell.appendChild(img);
         console.log('Cover displayed:', img.src);
     }
+    
 
     function attachRowEventListeners(row) {
         const c1 = row.cells[0];

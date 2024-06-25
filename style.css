@@ -112,6 +112,8 @@ header {
 td {
   font-size: 14px !important;
   padding-left: 20px !important;
+  vertical-align: middle !important; 
+  padding: 10px 20px; 
 }
 
 /* NOTE TO SELF: VERTICAL IMAGE SIZING */
