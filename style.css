@@ -16,8 +16,7 @@
 }
 
 .logo img {
-  width: 300px; 
-  height: 90px; 
+  max-width: 275px; 
 }
 
 main {
@@ -38,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   float: left;
-  padding-top: 60px
+  padding-top: 39px !important;
 } 
 
 tr:hover {
@@ -50,7 +49,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto !important;
-  padding-top: 60px;
 }
 
 .medium-button {
@@ -255,7 +253,7 @@ footer {
   left: 0;
   bottom: 0;
   position: relative;
-  border-top: 1px solid var(--border)
+  border-top: 2px solid var(--border)
 }
 
 footer p {
