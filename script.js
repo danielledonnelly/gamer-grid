@@ -2,8 +2,8 @@
 function saveTableData() {
     console.log("Saving table data");
     const tableContent = document.getElementById('media-table-body').innerHTML;
-    localStorage.setItem('mediaMasterlist', tableContent);
-    console.log("Data saved to localStorage:", localStorage.getItem('mediaMasterlist'));
+    localStorage.setItem('gamerGrid', tableContent);
+    console.log("Data saved to localStorage:", localStorage.getItem('gamerGrid'));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadTableData() {
         console.log("Loading table data");
-        const tableContent = localStorage.getItem('mediaMasterlist');
+        const tableContent = localStorage.getItem('gamerGrid');
         if (tableContent) {
             document.getElementById('media-table-body').innerHTML = tableContent;
             const rows = document.querySelectorAll('#media-table-body tr');
