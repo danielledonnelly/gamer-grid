@@ -58,8 +58,8 @@ table {
 tr {
   border-top: 2px solid var(--border) !important; 
   border-bottom: 2px solid var(--border) !important;
-  max-height: 200px; /* Ensure table rows have a maximum height */
-  overflow: hidden; /* Hide overflow content */
+  max-height: 200px;
+  overflow: hidden; 
 }
     
 p {
@@ -337,18 +337,23 @@ a:hover,
 
 td:last-child,
 td:first-child,
-td:nth-child(2) { 
+td:nth-child(2),
+td:nth-child(3) { 
   white-space: nowrap;
-  width: 3%; 
-  max-width: 3%; 
-  text-align: center;
+  width: 10%; 
+  max-width: 10%; 
+  text-align: center !important;
 }
 
 /* Mobile Styles */
 
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  
+@media only screen and (max-width: 1024px) {
+
+  th {
+    font-size: 14px !important;
+  }
+
   td {
     font-size: 12px !important;
   }
@@ -367,7 +372,13 @@ td:nth-child(2) {
   }
 
   .dropdown-item{
-    font-size: 12 !important;
+    font-size: 12px !important;
+  }
+
+  .delete {
+    position: relative;
+    height: 20px;
+    width: 20px;
   }
 
   td:first-child img {
@@ -376,6 +387,10 @@ td:nth-child(2) {
 }
 
 @media only screen and (max-width: 600px) {
+
+  th {
+    font-size: 13px !important;
+  }
 
   td {
     font-size: 12px !important;
@@ -386,10 +401,10 @@ td:nth-child(2) {
   }
   
   table {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto !important;
-  border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto !important;
+    border-spacing: 0;
   }
 
   .buttons {
