@@ -69,6 +69,7 @@ p {
 
 th {
   text-align: center !important;
+  font-size: 18px;
 }
 
 th,
@@ -335,13 +336,18 @@ a:hover,
   border: 10px #FFFFFF !important;
 }
 
-td:last-child,
+td:last-child{
+  white-space: nowrap;
+  width: 1%; 
+  max-width: 1%; 
+  text-align: center !important;
+}
+
 td:first-child,
 td:nth-child(2),
 td:nth-child(3) { 
-  white-space: nowrap;
   width: 10%; 
-  max-width: 5%; 
+  max-width: 10%; 
   text-align: center !important;
 }
 
