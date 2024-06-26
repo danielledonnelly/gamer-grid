@@ -85,30 +85,29 @@ h3 {
 }
 
 header {
-  background-color: var(--header) !important;
-  padding: 10px 0 !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
+  background-color: var(--header);
+  padding: 10px 0;
+  width: 100%;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 999;
   border-bottom: 2px solid var(--border);
-}
-
-.subtitle {
-  font-size: 16px;
-  color: #F465EE;
-  flex-grow: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  overflow: auto;
+  gap: 20px; /* Adjust this gap to increase/decrease space between logo and nav */
+}
+
+.logo a, nav a {
+  display: flex;
+  align-items: center;
 }
 
 /* Table Styles */
@@ -268,6 +267,7 @@ footer p {
   align-items: center !important;
   z-index: 999; 
   height: 60px;
+  width: 100%;
 } 
 
 .center-span.buttons button {
