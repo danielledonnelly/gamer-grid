@@ -71,6 +71,8 @@ th,
 td {
   color: #F465EE !important;  
   border-color: #9E7FEB !important;
+  border: 2px solid var(--border);
+  border-collapse: collapse;
 }
 
 h3 {
@@ -367,6 +369,11 @@ a:hover,
 }
 
 @media only screen and (max-width: 600px) {
+
+  /* I made the decision to have a three column version of the table on mobile because otherwise it looks cluttered */
+  .genre-column {
+    display: none;
+  }
 
   td {
     font-size: 12px !important;

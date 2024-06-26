@@ -89,13 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
         let c1 = document.createElement("td");
         let c2 = document.createElement("td");
         let c3 = document.createElement("td");
+        let c4 = document.createElement("td");
         let deleteCell = document.createElement("td");
 
         c1.innerText = " ";
         c3.innerText = " ";
+        c4.innerText = " ";
 
         c1.setAttribute("contenteditable", "true");
         c3.setAttribute("contenteditable", "true");
+        c4.setAttribute("contenteditable", "true");
 
         let debounceTimeout;
         c1.addEventListener('input', function() {
@@ -155,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         row.appendChild(c1);
         row.appendChild(c2);
         row.appendChild(c3);
+        row.appendChild(c4);
         row.appendChild(deleteCell);
 
         table.appendChild(row);
