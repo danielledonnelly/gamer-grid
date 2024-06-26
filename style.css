@@ -67,6 +67,10 @@ p {
   color: #F465EE !important;
 }
 
+th {
+  text-align: center !important;
+}
+
 th,
 td {
   color: #F465EE !important;  
@@ -121,10 +125,6 @@ td:first-child img {
   width: auto;
   height: auto;
   display: block;
-}
-
-thead th {
-  padding-left: 20px !important;
 }
 
 .dropdown-menu{
@@ -337,10 +337,11 @@ a:hover,
 
 td:last-child,
 td:first-child,
-td:nth-child(2) {  /* Targets the second cell in each row */
-  white-space: nowrap; /* Prevents the content from wrapping to the next line */
-  width: 1%; /* Minimally sets the width allowing the content to dictate the actual width */
-  max-width: 1%; /* Ensures the maximum width is as small as possible to fit the content */
+td:nth-child(2) { 
+  white-space: nowrap;
+  width: 3%; 
+  max-width: 3%; 
+  text-align: center;
 }
 
 /* Mobile Styles */
