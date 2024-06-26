@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   float: left;
-  padding-top: 19px;
+  padding-top: 20px;
 } 
 
 tr:hover {
@@ -92,7 +92,7 @@ header {
   left: 0;
   top: 0;
   z-index: 999;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,7 +341,7 @@ td:nth-child(2),
 td:nth-child(3) { 
   white-space: nowrap;
   width: 10%; 
-  max-width: 10%; 
+  max-width: 5%; 
   text-align: center !important;
 }
 
