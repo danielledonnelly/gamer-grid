@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function exportTableToCSV() {
+
         let table = document.getElementById("media-table");
         let csvContent = "data:text/csv;charset=utf-8,";
         let headers = [];
