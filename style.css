@@ -376,11 +376,6 @@ td:nth-child(2) {  /* Targets the second cell in each row */
 
 @media only screen and (max-width: 600px) {
 
-  /* I made the decision to have a three column version of the table on mobile because otherwise it looks cluttered */
-  .genre-column {
-    display: none;
-  }
-
   td {
     font-size: 12px !important;
   }
