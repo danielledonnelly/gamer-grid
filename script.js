@@ -197,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function exportTableToCSV() {
-
         let table = document.getElementById("media-table");
         let csvContent = "data:text/csv;charset=utf-8,";
         let headers = [];
@@ -227,10 +226,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
         let encodedUri = encodeURI(csvContent);
         let link = document.createElement("a");
+        link.style.position = 'absolute';
+        link.style.left = '-9999px'; // Position link off-screen
         link.setAttribute("href", encodedUri);
         link.setAttribute("download", "media_masterlist.csv");
         document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link); // Remove the link immediately after clicking
     }
     
 
