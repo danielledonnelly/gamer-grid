@@ -20,26 +20,25 @@
   max-width: 275px; 
 }
 
-main {
-  margin-top: 70px;
-  background-color: var(--body);
-  width: 100% !important;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: var(--body) !important; 
   color: #FFFFFF !important;
   margin: 0; 
-  padding: 0; 
+  padding-top: 20px; 
   width: 100% !important;
-  display: flex;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  float: left;
-  padding-top: 20px;
+  overflow-y: auto;
 } 
+
+main {
+  margin-top: 70px;
+  background-color: var(--body);
+  width: 100% !important;
+  flex: 1 0 auto;
+}
 
 tr:hover {
   background-color: #2c0f76 !important;
