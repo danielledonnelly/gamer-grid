@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   float: left;
-  padding-top: 39px !important;
+  padding-top: 19px;
 } 
 
 tr:hover {
@@ -80,7 +80,7 @@ h3 {
 
 header {
   background-color: var(--header) !important;
-  padding: 20px 0 !important;
+  padding: 10px 0 !important;
   justify-content: space-between !important;
   align-items: center !important;
   width: 100% !important;
