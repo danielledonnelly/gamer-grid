@@ -234,12 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.click();
         document.body.removeChild(link); // Remove the link immediately after clicking
     }
-    
-
-    // Not sure that this is all needed now, I might be better off leaving it out of the code
-    // const accessToken = '90q372sybn6f3g05qh9u1xt0dvzvmd';
-    // const clientId = 'ca83ro33podq33xry2t7ems5x7bpw7';
-    // const apiKey = 'jr8s00jj5a';
 
     async function fetchGameCover(gameTitle, coverCell) {
         console.log(`Fetching cover for game: ${gameTitle}`);
